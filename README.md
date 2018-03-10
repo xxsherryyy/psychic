@@ -1,0 +1,2 @@
+# psychic
+hw 3

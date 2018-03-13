@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic</title>
+</head>
+<body>
+<div>
+    <h1> I'm Psychic <span id = "user-text"></span></h1>
+</div> 
+<div id="game">
+    User Chose: <span id = "userChoice"></span> <br>
+    Computer Chose: <span id = "computerChoice"></span> <br>
+    Wins: <span id = "userWins"></span> <br>
+    Losses: <spain id = "userLosses"></spain> <br>
+    Guess: <span id = "userGuess"></span> <br>
+</div>
+
+<script type = "text/javascript">
+    var computerChoice = ['a', 'b','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var userWins =0;
+    var userLosses =0;
+    var userGuess =10;
+
+var randoNumber = Math.floor(Math.random()*computerChoice.length);
+ console.log(computerGuess);
+ var computerGuess = computerChoice[randoNumber];
+ document.getElementById('computerChoice').textContent = computerGuess;
+ 
+ document.onkeyup = function(event) {
+    var userChoice = event.key;
+    console.log(event);
+    if (userChoice === computerGuess) {
+        userWins +=1;
+        console.log(userWins);
+    }
+    if (userChoice !== computerGuess) {
+        userLosses +=1;
+        userGuess -=1;
+        if (userGuess === 0)
+            {alert('You lose!');
+            userGuess = 10;
+        randoNumber = Math.floor(Math.random()*computerChoice.length);
+        computerGuess = computerChoice[randoNumber];
+    }
+    
+    };
+    
+var userText = document.getElementById("userChoice");
+userText.textContent = userChoice
+        document.getElementById('userWins').textContent = userWins;
+        document.getElementById('userLosses').textContent = userLosses;
+        document.getElementById('userGuess').textContent = userGuess;
+      
+}
+
+    </script>
+    
+</body>
+</html>
